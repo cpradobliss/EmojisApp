@@ -67,6 +67,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func didTapButton1(_ sender: UIButton) {
-        // Do Nothing (yet)
+        let destinationController = EmojisListViewController()
+        self.present(destinationController, animated: true)
     }
 }
