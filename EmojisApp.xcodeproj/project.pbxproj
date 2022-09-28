@@ -12,6 +12,10 @@
 		341661D528E47AC5008C510A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341661D428E47AC5008C510A /* MainViewController.swift */; };
 		341661DA28E47AC7008C510A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341661D928E47AC7008C510A /* Assets.xcassets */; };
 		341661DD28E47AC7008C510A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341661DB28E47AC7008C510A /* LaunchScreen.storyboard */; };
+		3486B72428E4827100A23956 /* EmojiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72328E4827100A23956 /* EmojiListViewController.swift */; };
+		3486B72628E4829B00A23956 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72528E4829B00A23956 /* ColorCell.swift */; };
+		3486B72928E482C800A23956 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72828E482C800A23956 /* UIColor+Random.swift */; };
+		3486B72B28E4830200A23956 /* CGFloat+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72A28E4830200A23956 /* CGFloat+Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		341661D928E47AC7008C510A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		341661DC28E47AC7008C510A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		341661DE28E47AC7008C510A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3486B72328E4827100A23956 /* EmojiListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListViewController.swift; sourceTree = "<group>"; };
+		3486B72528E4829B00A23956 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		3486B72828E482C800A23956 /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
+		3486B72A28E4830200A23956 /* CGFloat+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		341661CF28E47AC5008C510A /* EmojisApp */ = {
 			isa = PBXGroup;
 			children = (
+				3486B72D28E4845B00A23956 /* Scenes */,
+				3486B72C28E4845000A23956 /* Cells */,
+				3486B72728E482B200A23956 /* Utilities */,
 				341661D028E47AC5008C510A /* AppDelegate.swift */,
 				341661D228E47AC5008C510A /* SceneDelegate.swift */,
-				341661D428E47AC5008C510A /* MainViewController.swift */,
 				341661D928E47AC7008C510A /* Assets.xcassets */,
 				341661DB28E47AC7008C510A /* LaunchScreen.storyboard */,
 				341661DE28E47AC7008C510A /* Info.plist */,
 			);
 			path = EmojisApp;
+			sourceTree = "<group>";
+		};
+		3486B72728E482B200A23956 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3486B72828E482C800A23956 /* UIColor+Random.swift */,
+				3486B72A28E4830200A23956 /* CGFloat+Random.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3486B72C28E4845000A23956 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3486B72528E4829B00A23956 /* ColorCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3486B72D28E4845B00A23956 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				341661D428E47AC5008C510A /* MainViewController.swift */,
+				3486B72328E4827100A23956 /* EmojiListViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +172,11 @@
 			files = (
 				341661D528E47AC5008C510A /* MainViewController.swift in Sources */,
 				341661D128E47AC5008C510A /* AppDelegate.swift in Sources */,
+				3486B72628E4829B00A23956 /* ColorCell.swift in Sources */,
 				341661D328E47AC5008C510A /* SceneDelegate.swift in Sources */,
+				3486B72928E482C800A23956 /* UIColor+Random.swift in Sources */,
+				3486B72428E4827100A23956 /* EmojiListViewController.swift in Sources */,
+				3486B72B28E4830200A23956 /* CGFloat+Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
