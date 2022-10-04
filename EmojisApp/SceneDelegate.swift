@@ -7,7 +7,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = MainViewController()
+        let firstController = MainViewController()
+        firstController.emojiService = .init()
+        window.rootViewController = firstController
         self.window = window
         window.makeKeyAndVisible()
         

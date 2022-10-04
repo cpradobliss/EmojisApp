@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     private var randomEmojiImageView: UIImageView
     
     var emojis: [String] = ["💪🏻", "🔴", "🙏🏻", "🟢"]
-    //var emojiService: EmojiService
+    var emojiService: EmojiService?
     
     init() {
         // MARK: - 2 - Initializing...
@@ -85,6 +85,9 @@ class MainViewController: UIViewController {
     }
     
     @objc func didTapRandomEmojiButton(_ sender: UIButton) {
-        randomEmojiImageView.image = emojis.randomElement()?.toImage()
+        emojiService?.fetchEmojis()
+        //let emojiUrl = ???
+        //randomEmojiImageView.downloaded(from: emojiUrl)
+        //randomEmojiImageView.image = emojis.randomElement()?.toImage()
     }
 }
