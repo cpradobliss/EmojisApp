@@ -13,18 +13,25 @@ import UIKit
 class MainViewController: UIViewController {
     // MARK: - 1 - Creating...
     private var stackView: UIStackView
-    private var button1: UIButton
-    private var button2: UIButton
-    private var button3: UIButton
+    private var randomEmojiButton: UIButton
+    private var avatarButton: UIButton
+    private var emojisButton: UIButton
+    private var randomEmojiContainerView: UIView
+    private var randomEmojiImageView: UIImageView
+    
+    var emojis: [String] = ["💪🏻", "🔴", "🙏🏻", "🟢"]
+    //var emojiService: EmojiService
     
     init() {
         // MARK: - 2 - Initializing...
-        //button1 = UIButton(frame: CGRect(x: 9, y: 10, width: 100, height: 100))
-        //let button1Frame = CGRect(x: 9, y: 10, width: 100, height: 100000)
-        button1 = .init(type: .system)
-        button2 = .init(type: .system)
-        button3 = .init(type: .system)
-        stackView = .init(arrangedSubviews: [button1, button2, button3])
+        //randomEmojiButton = UIButton(frame: CGRect(x: 9, y: 10, width: 100, height: 100))
+        //let randomEmojiButtonFrame = CGRect(x: 9, y: 10, width: 100, height: 100000)
+        randomEmojiButton = .init(type: .system)
+        avatarButton = .init(type: .system)
+        emojisButton = .init(type: .system)
+        randomEmojiContainerView = .init(frame: .zero)
+        randomEmojiImageView = .init(frame: .zero)
+        stackView = .init(arrangedSubviews: [randomEmojiContainerView, randomEmojiButton, avatarButton, emojisButton])
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,30 +51,40 @@ class MainViewController: UIViewController {
     // MARK: - 3 - Configuring..
     private func setUpViews() {
         stackView.axis = .vertical
-        button1.setTitle("Botão 1", for: .normal)
-        button2.setTitle("Botão 2", for: .normal)
-        button3.setTitle("Botão 3", for: .normal)
+        randomEmojiButton.setTitle("Random Emoji", for: .normal)
+        avatarButton.setTitle("Avatars", for: .normal)
+        emojisButton.setTitle("Emojis", for: .normal)
         
-        button3.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
+        randomEmojiImageView.contentMode = .scaleAspectFit
+        
+        randomEmojiButton.addTarget(self, action: #selector(didTapRandomEmojiButton), for: .touchUpInside)
     }
     
     // MARK: - 4 - Adding to the Parent View..
     private func addViewsToSuperview() {
+        randomEmojiContainerView.addSubview(randomEmojiImageView)
+        
         view.addSubview(stackView)
     }
     
     // MARK: - 5 - Setting Up the Constraints..
     private func setUpConstraints() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        [stackView, randomEmojiImageView].forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
+            randomEmojiImageView.leadingAnchor.constraint(equalTo: randomEmojiContainerView.leadingAnchor),
+            randomEmojiImageView.trailingAnchor.constraint(equalTo: randomEmojiContainerView.trailingAnchor),
+            randomEmojiImageView.bottomAnchor.constraint(equalTo: randomEmojiContainerView.bottomAnchor),
+            randomEmojiImageView.topAnchor.constraint(equalTo: randomEmojiContainerView.topAnchor),
+            
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
-    @objc func didTapButton1(_ sender: UIButton) {
-        let destinationController = EmojisListViewController()
-        self.present(destinationController, animated: true)
+    @objc func didTapRandomEmojiButton(_ sender: UIButton) {
+        randomEmojiImageView.image = emojis.randomElement()?.toImage()
     }
 }
