@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
     private var randomEmojiContainerView: UIView
     private var randomEmojiImageView: UIImageView
     
-    var emojis: [String] = ["💪🏻", "🔴", "🙏🏻", "🟢"]
     var emojiService: EmojiService?
     
     init() {
@@ -85,9 +84,18 @@ class MainViewController: UIViewController {
     }
     
     @objc func didTapRandomEmojiButton(_ sender: UIButton) {
-        emojiService?.fetchEmojis()
-        //let emojiUrl = ???
-        //randomEmojiImageView.downloaded(from: emojiUrl)
-        //randomEmojiImageView.image = emojis.randomElement()?.toImage()
+        emojiService?.getEmojis() { [weak self] result in
+            switch result {
+            case .success(let emojis):
+                guard let emojiUrl = emojis.randomElement()?.imageUrl else {
+                    // TODO: handle error
+                    return
+                }
+                self?.randomEmojiImageView.downloaded(from: emojiUrl)
+            case .failure(let error):
+                // TODO: handle error
+                break
+            }
+        }
     }
 }
