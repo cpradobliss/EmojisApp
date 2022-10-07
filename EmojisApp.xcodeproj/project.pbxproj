@@ -23,6 +23,8 @@
 		3486B72628E4829B00A23956 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72528E4829B00A23956 /* ColorCell.swift */; };
 		3486B72928E482C800A23956 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72828E482C800A23956 /* UIColor+Random.swift */; };
 		3486B72B28E4830200A23956 /* CGFloat+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486B72A28E4830200A23956 /* CGFloat+Random.swift */; };
+		349D5BDA28F00D000015B420 /* FakeEmojiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5BD928F00D000015B420 /* FakeEmojiService.swift */; };
+		349D5BDC28F00D190015B420 /* APIEmojiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5BDB28F00D190015B420 /* APIEmojiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		3486B72528E4829B00A23956 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		3486B72828E482C800A23956 /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
 		3486B72A28E4830200A23956 /* CGFloat+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Random.swift"; sourceTree = "<group>"; };
+		349D5BD928F00D000015B420 /* FakeEmojiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEmojiService.swift; sourceTree = "<group>"; };
+		349D5BDB28F00D190015B420 /* APIEmojiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEmojiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +148,9 @@
 		3485461328EC485D00EA6D67 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				3485461428EC486C00EA6D67 /* EmojiService.swift */,
+				349D5BDD28F00D370015B420 /* Protocol */,
+				349D5BD828F00CF00015B420 /* Impl */,
+				349D5BD728F00CE60015B420 /* Mock */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -175,6 +181,30 @@
 				3486B72328E4827100A23956 /* EmojiListViewController.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		349D5BD728F00CE60015B420 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				349D5BD928F00D000015B420 /* FakeEmojiService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		349D5BD828F00CF00015B420 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				349D5BDB28F00D190015B420 /* APIEmojiService.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		349D5BDD28F00D370015B420 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3485461428EC486C00EA6D67 /* EmojiService.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +281,7 @@
 				341661D128E47AC5008C510A /* AppDelegate.swift in Sources */,
 				3485460D28EC473C00EA6D67 /* EmojiAPI.swift in Sources */,
 				3485460A28EC46DF00EA6D67 /* NetworkManager.swift in Sources */,
+				349D5BDA28F00D000015B420 /* FakeEmojiService.swift in Sources */,
 				3485460428EC3E9E00EA6D67 /* UIImageView+Download.swift in Sources */,
 				3486B72628E4829B00A23956 /* ColorCell.swift in Sources */,
 				3485461528EC486C00EA6D67 /* EmojiService.swift in Sources */,
@@ -261,6 +292,7 @@
 				3486B72428E4827100A23956 /* EmojiListViewController.swift in Sources */,
 				3486B72B28E4830200A23956 /* CGFloat+Random.swift in Sources */,
 				3485460228EC3DC800EA6D67 /* String+ToImage.swift in Sources */,
+				349D5BDC28F00D190015B420 /* APIEmojiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

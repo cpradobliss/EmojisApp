@@ -8,7 +8,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let firstController = MainViewController()
+        #if DEBUG
         firstController.emojiService = FakeEmojiService()
+        #else
+        firstController.emojiService = APIEmojiService()
+        #endif
         window.rootViewController = firstController
         self.window = window
         window.makeKeyAndVisible()
